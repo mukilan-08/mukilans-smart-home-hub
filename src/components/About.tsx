@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const About = () => {
   return (
@@ -14,8 +15,15 @@ const About = () => {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="md:w-1/3">
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <div className="w-32 h-32 rounded-full bg-blue-100 mx-auto mb-4 flex items-center justify-center">
-                <span className="text-4xl font-bold text-blue-600">MV</span>
+              <div className="mx-auto mb-4 flex items-center justify-center">
+                <Avatar className="w-32 h-32 border-4 border-blue-100">
+                  <AvatarImage 
+                    src="/lovable-uploads/8826e8e0-3b72-4dac-9bda-a16939b0fc28.png" 
+                    alt="Mukilan V" 
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="text-4xl font-bold text-blue-600 bg-blue-100">MV</AvatarFallback>
+                </Avatar>
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Mukilan V</h3>
               <p className="text-blue-600 mb-4">Software Engineer</p>
