@@ -1,9 +1,17 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Download } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/sonner';
 
 const About = () => {
+  const handleDownloadCV = () => {
+    // Generate CV download
+    window.open('/downloadable-cv', '_blank');
+    toast.success('Opening downloadable CV format');
+  };
+
   return (
     <section id="about" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -27,6 +35,15 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Mukilan V</h3>
               <p className="text-blue-600 mb-4">Software Engineer</p>
+              
+              <Button 
+                onClick={handleDownloadCV} 
+                variant="outline" 
+                className="mb-4 w-full flex items-center justify-center gap-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              >
+                <Download size={16} />
+                Download CV
+              </Button>
               
               <div className="flex flex-col space-y-3 text-left">
                 <div className="flex items-center">
